@@ -1,0 +1,139 @@
+<mxfile host="Electron">
+  <diagram id="CheckoutFlowchart" name="Flowchart Sistem Checkout Interactive">
+    <mxGraphModel dx="691" dy="825" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="node_start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=14;" value="Mulai" vertex="1">
+          <mxGeometry height="60" width="120" x="314" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="node_input" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Input harga, jumlah, isMember" vertex="1">
+          <mxGeometry height="60" width="220" x="264" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="node_val" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;" value="Harga &gt; 0 AND&#xa;Jumlah is Integer &gt; 0?" vertex="1">
+          <mxGeometry height="100" width="200" x="274" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="9PLDNBeWTM9m0CKOdcPU-2" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="node_end_success">
+          <mxGeometry relative="1" x="0.0291" as="geometry">
+            <Array as="points">
+              <mxPoint x="653" y="1400" />
+            </Array>
+            <mxPoint x="653" y="315" as="sourcePoint" />
+            <mxPoint x="397" y="1400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9PLDNBeWTM9m0CKOdcPU-3" connectable="0" parent="9PLDNBeWTM9m0CKOdcPU-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Selesai (Versi Hardcoded)" vertex="1">
+          <mxGeometry relative="1" x="-0.8505" y="4" as="geometry">
+            <mxPoint x="-7" y="-52" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node_error" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" value="Output:&lt;br&gt;&quot;Input tidak valid!&quot;" vertex="1">
+          <mxGeometry height="50" width="240" x="530" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="node_subtotal" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Subtotal = harga * jumlah" vertex="1">
+          <mxGeometry height="60" width="200" x="274" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="node_member" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;" value="isMember == true?" vertex="1">
+          <mxGeometry height="90" width="180" x="284" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="node_diskon_yes" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Diskon = 10% * Subtotal" vertex="1">
+          <mxGeometry height="50" width="170" x="140" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="node_diskon_no" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Diskon = 0" vertex="1">
+          <mxGeometry height="50" width="170" x="440" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="node_total_diskon" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="TotalSetelahDiskon = Subtotal - Diskon" vertex="1">
+          <mxGeometry height="60" width="220" x="264" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="node_ongkir_check" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;" value="TotalSetelahDiskon &gt;= 250000?" vertex="1">
+          <mxGeometry height="100" width="220" x="264" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="node_ongkir_free" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Ongkir = 0" vertex="1">
+          <mxGeometry height="50" width="170" x="140" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="node_ongkir_paid" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Ongkir = 15000" vertex="1">
+          <mxGeometry height="50" width="170" x="440" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="node_calc_final" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="TotalPembayaran = TotalSetelahDiskon + Ongkir" vertex="1">
+          <mxGeometry height="60" width="240" x="254" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="node_output_success" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="Output Rincian Checkout:&#xa;subtotal, diskon, ongkir, totalPembayaran" vertex="1">
+          <mxGeometry height="60" width="280" x="234" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="node_repeat_check" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;" value="Hitung Transaksi Lain?&lt;br&gt;(y/n) (Versi Dinamis)" vertex="1">
+          <mxGeometry height="90" width="200" x="274" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="node_end_success" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=14;" value="Selesai" vertex="1">
+          <mxGeometry height="60" width="120" x="314" y="1370" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="node_start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_input">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="node_input" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_val">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3_no" edge="1" parent="1" source="node_val" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_error" value="Tidak">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3_err_back" edge="1" parent="1" source="node_error" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="node_input" value="Ulangi Input (Versi Dinamis)">
+          <mxGeometry relative="1" x="-0.5935" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="650" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3_yes" edge="1" parent="1" source="node_val" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_subtotal" value="Ya">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="node_subtotal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_member">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5_yes" edge="1" parent="1" source="node_member" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_diskon_yes" value="Ya (Member)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5_no" edge="1" parent="1" source="node_member" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_diskon_no" value="Tidak (Non-Member)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6_y" edge="1" parent="1" source="node_diskon_yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_total_diskon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6_n" edge="1" parent="1" source="node_diskon_no" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_total_diskon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="node_total_diskon" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_ongkir_check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8_yes" edge="1" parent="1" source="node_ongkir_check" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_ongkir_free" value="Ya (&gt;= 250rb)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8_no" edge="1" parent="1" source="node_ongkir_check" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_ongkir_paid" value="Tidak (&lt; 250rb)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9_f" edge="1" parent="1" source="node_ongkir_free" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_calc_final">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9_p" edge="1" parent="1" source="node_ongkir_paid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_calc_final">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="node_calc_final" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_output_success">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="node_output_success" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_repeat_check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12_yes" edge="1" parent="1" source="node_repeat_check" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="node_input" value="Ya">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="1275" />
+              <mxPoint x="100" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12_no" edge="1" parent="1" source="node_repeat_check" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="node_end_success" value="Tidak">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
